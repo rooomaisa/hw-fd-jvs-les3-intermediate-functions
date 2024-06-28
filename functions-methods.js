@@ -9,6 +9,13 @@
 // getEmailDomain("t.mellink@novi.nl") geeft novi.nl
 // getEmailDomain("a.wiersma@outlook.com") geeft outlook.com
 
+function getEmailDomain (mail) {
+    const split = mail.split(`@`);
+    const domain = split[1];
+    return domain;
+}
+
+console.log(getEmailDomain('n.eeken@novi-education.nl'));
 
 
 
@@ -21,7 +28,23 @@
 // typeOfEmail("a.wiersma@outlook.com") geeft "Extern"
 
 
+// ik moet dan toch wel weer eerst deze functie maken om die daaronder de info te geven of ben ik nu moeilijk aan het doen?
+function endOfEmail (email) {
+    const parts = email.split('@');
+    return parts [1]
+}
 
+function typeOfEmail (email) {
+    const domain = endOfEmail(email);
+    if (domain === `novi-education.nl`) {
+        return `student`;
+    } else if (domain === 'novi.nl') {
+        return `medewerker`;
+    } else {
+        return `extern`;
+    }
+}
+console.log(typeOfEmail('a.wiersma@outlook.com'));
 /* Opdracht  3 */
 // Schrijf een functie genaamd checkEmailValidity, die een emailadres verwacht en checkt of het emailadres valide is. De functie returned true of false, afhankelijk van de uitkomst.
 // Een emailadres is valide wanneer:
@@ -34,3 +57,19 @@
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
+
+// ik gebruik hier de logical not operator omdat ik die @ wel erin wil hebben maar alles false wil hebben om het helemaal te doorlopen. dus alle voorwaarden
+// voldoen alles geeft fals tikt hij door naar de return true
+function checkEmailValidity (emailadres){
+ if (!emailadres.includes(`@`)) {
+     return false;
+ }
+ if (emailadres.includes(`,`)) {
+     return false;
+ }
+ if (emailadres.endsWith(`.`)) {
+     return false;
+ }
+     return true;
+ }
+ console.log(checkEmailValidity(`n.eeken@novi.nl`));
