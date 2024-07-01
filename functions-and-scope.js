@@ -58,12 +58,11 @@ function cumLaude2(gradesArrays) {
 }
 
 // grades arrays
-const grades1 = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 const grades2 = [6, 4, 5];
 const grades3 = [8, 9, 4, 6, 10];
 
 // ik spreek dus de functie aan geef argumenten mee die dus de functie gradesArray gevuld hebben.
-console.log(cumLaude2([grades1, grades2, grades3]));
+console.log(cumLaude2([grades, grades2, grades3]));
 
 
 
@@ -94,6 +93,20 @@ console.log(calculateAverage(grades));
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
 
+function averageGrade (gradesArray) {
+    let total = 0;
+    for (let i = 0; i < gradesArray.length; i++) {
+        total += gradesArray[i];
+    }
+    let average = total / gradesArray.length;
+    return average.toFixed(2);
+}
+    // console.log(`average array one ${gradesArray}
+console.log("array grades",averageGrade(grades));
+console.log("array 2",averageGrade(grades2));
+console.log("array 3",averageGrade(grades3));
+
+
 // ---- Verwachte uitkomsten:
 // averageGrade(grades) geeft 6.642857142857143
 // averageGrade([6, 4, 5]) geeft 5
@@ -104,7 +117,7 @@ console.log(calculateAverage(grades));
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
-
+// in de code hierboven bijgevoegd!!!
 
 
 /* Bonusopdracht: hoogste cijfer */
