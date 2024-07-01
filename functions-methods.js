@@ -11,8 +11,8 @@
 
 function getEmailDomain (mail) {
     const split = mail.split(`@`);
-    const domain = split[1];
-    return domain;
+    return split[1];
+
 }
 
 console.log(getEmailDomain('n.eeken@novi-education.nl'));
